@@ -45,8 +45,7 @@ print '
         unset($_SESSION['message']);
     }
 	
-	if (!isset($menu) || $menu == 1) { include("home.php"); 
-    }
+	if (!isset($menu) || $menu == 1) { include("home.php"); }
 	
 	else if ($menu == 2) { include("complaints.php"); }
 	

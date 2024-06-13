@@ -16,7 +16,6 @@
 	}
 	
 	
-	
 	if (isset($_GET['delete']) && $_GET['delete'] != '') {
 	
 		$query  = "DELETE FROM users";
