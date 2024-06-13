@@ -28,7 +28,6 @@
 			}
         }
 		
-		
 		$_SESSION['message'] .= '<p class = "message">You successfully added complaints!</p>';
 
 		header("Location: index.php?menu=7&action=2");
