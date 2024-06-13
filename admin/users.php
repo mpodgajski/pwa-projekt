@@ -1,23 +1,22 @@
 <?php 
 	
-	# Update user profile
 	if (isset($_POST['edit']) && $_POST['_action_'] == 'TRUE') {
 		$query  = "UPDATE users SET firstname=?, lastname=?, email=?, username=?, country=?, archive=?";
 		$query .= " WHERE id=?";
 		$stmt = mysqli_prepare($MySQL, $query);
 		mysqli_stmt_bind_param($stmt, "ssssssi", $_POST['firstname'], $_POST['lastname'], $_POST['email'], $_POST['username'], $_POST['country'], $_POST['archive'], $_POST['edit']);
 		$result = mysqli_stmt_execute($stmt);
-		# Close MySQL connection
+
 		@mysqli_close($MySQL);
 		
 		$_SESSION['message'] = '<p class = "message">You successfully changed user profile!</p>';
 		
-		# Redirect
+		
 		header("Location: index.php?menu=7&action=1");
 	}
-	# End update user profile
 	
-	# Delete user profile
+	
+	
 	if (isset($_GET['delete']) && $_GET['delete'] != '') {
 	
 		$query  = "DELETE FROM users";
@@ -29,13 +28,11 @@
 
 		$_SESSION['message'] = '<p class = "message">You successfully deleted user profile!</p>';
 		
-		# Redirect
+		
 		header("Location: index.php?menu=7&action=1");
 	}
-	# End delete user profile
 	
-	
-	#Show user info
+
 	if (isset($_GET['id']) && $_GET['id'] != '') {
 		$query  = "SELECT * FROM users";
 		$query .= " WHERE id=?";
@@ -63,7 +60,6 @@
 		<p><a href="index.php?menu='.$menu.'&amp;action='.$action.'">Back</a></p>
 		</div>';
 	}
-	#Edit user profile
 	else if (isset($_GET['edit']) && $_GET['edit'] != '') {
 		$query  = "SELECT * FROM users";
 		$query .= " WHERE id=?";
@@ -174,6 +170,5 @@
 		</div>';
 	}
 	
-	# Close MySQL connection
 	@mysqli_close($MySQL);
 ?>

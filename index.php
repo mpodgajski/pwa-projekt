@@ -48,26 +48,20 @@ print '
 	if (!isset($menu) || $menu == 1) { include("home.php"); 
     }
 	
-	# News
 	else if ($menu == 2) { include("complaints.php"); }
 	
-	# Contact
 	else if ($menu == 3) { include("contact.php"); 
         }
 	
-	# About us
 	else if ($menu == 4) { include("about.php"); 
         }
 	
-	# Register
 	else if ($menu == 5) { include("register.php"); 
         }
 	
-	# Signin
 	else if ($menu == 6) { include("signin.php"); 
         }
 	
-	# Admin webpage
 	else if ($menu == 7) { include("admin.php"); 
         }
 	

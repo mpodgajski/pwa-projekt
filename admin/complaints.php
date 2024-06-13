@@ -215,6 +215,5 @@
 		</div> <br><br>';
 	}
 	
-	# Close MySQL connection
 	@mysqli_close($MySQL);
 ?>
